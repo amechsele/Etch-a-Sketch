@@ -13,6 +13,7 @@ select.addEventListener('click', () => {
     }
        createGrid(num);});
 
+// create the grid of specified size
 function createGrid(size){
     for(let i=0; i < size; i++){
         let row = document.createElement('div');
@@ -23,12 +24,11 @@ function createGrid(size){
             cell.classList.add('grid-cell');
             cell.addEventListener('mouseover', (e) => e.target.style.backgroundColor = randomColor());
             row.appendChild(cell);
-
-        
     }
 }
 }
 
+// create and return a random color
 function randomColor(){
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
@@ -36,7 +36,7 @@ function randomColor(){
 
     let color = "rgb(" + r + "," + g + "," + b + ")";
     return color;
-};
+}
 
 function resetGrid(){
     container.innerHTML = '';
